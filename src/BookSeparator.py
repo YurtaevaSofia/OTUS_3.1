@@ -22,7 +22,7 @@ for user in users['users']:
 
 i = 0
 for updBook in upd_books:
-    if i != 28:
+    if i != len(resulted_persons):
         resulted_persons[i].books.append(updBook)
         i = i + 1
     else:
@@ -34,7 +34,6 @@ for person in resulted_persons:
 temporary_list = []
 for person in resulted_persons:
     temporary_list.append(person.encode())
-jsonString = json.dumps(temporary_list)
 
 with open("resourses/results.json", "w") as results:
     results.write(json.dumps(temporary_list, indent=4))

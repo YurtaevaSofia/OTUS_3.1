@@ -1,6 +1,3 @@
-import json
-
-
 class ResultedPerson:
 
     def __init__(self, name, gender, address, age, books):
@@ -14,8 +11,7 @@ class ResultedPerson:
         temporary_list = []
         for book in self.books:
             temporary_list.append(book.encode())
-        jsonString = json.dumps(temporary_list)
-        self.books = jsonString
+        self.books = temporary_list
 
     def encode(self):
         return self.__dict__
